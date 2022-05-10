@@ -9,7 +9,6 @@ pipeline {
         stage('install') {
             steps {
                 echo 'Installing...'
-                sh 'npm install'
             }
         }
 
@@ -18,8 +17,6 @@ pipeline {
             steps {
 
                 echo 'Building..'
-
-                sh 'npm run build'
             }
 
         }
@@ -30,8 +27,6 @@ pipeline {
 
                 echo 'Testing..'
 
-                sh 'npm run test:e2e'
-
             }
 
         }
@@ -41,8 +36,6 @@ pipeline {
             steps {
 
                 echo 'Deploying....'
-
-                sh '&& npm run start:prod'
 
             }
 

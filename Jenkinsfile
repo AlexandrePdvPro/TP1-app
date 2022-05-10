@@ -9,7 +9,7 @@ pipeline {
         stage('install') {
             steps {
                 echo 'Installing...'
-                sh 'cd project-name/ && npm install'
+                sh 'npm install'
             }
         }
 
@@ -19,7 +19,7 @@ pipeline {
 
                 echo 'Building..'
 
-                sh 'cd project-name/ && npm run build'
+                sh 'npm run build'
             }
 
         }
@@ -30,7 +30,7 @@ pipeline {
 
                 echo 'Testing..'
 
-                sh 'cd project-name/ && npm run test:e2e'
+                sh 'npm run test:e2e'
 
             }
 
@@ -42,7 +42,7 @@ pipeline {
 
                 echo 'Deploying....'
 
-                sh 'cd project-name/ && npm run start:prod'
+                sh '&& npm run start:prod'
 
             }
 

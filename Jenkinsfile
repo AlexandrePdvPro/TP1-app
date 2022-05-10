@@ -6,10 +6,9 @@ pipeline {
 
     stages {
 
-        stage('Install') {
+        stage('Test') {
             steps {
-                echo 'Installing...'
-                sh 'npm install'
+                sh 'node --version'
             }
         }
 
@@ -18,7 +17,6 @@ pipeline {
             steps {
 
                 echo 'Building..'
-                sh 'npm run build'
             }
 
         }
@@ -28,7 +26,6 @@ pipeline {
             steps {
 
                 echo 'Testing..'
-                sh 'npm run test:e2e'
 
             }
 
@@ -39,7 +36,6 @@ pipeline {
             steps {
 
                 echo 'Deploying....'
-                sh 'npm run start:prod'
 
             }
 
